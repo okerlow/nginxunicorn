@@ -9,6 +9,10 @@ get '/' do
   "hello world"
 end
 
-get '/foo' do
-  'foo'
+get '/:tag' do |tag|
+  redirect url("/#{tag}/")
+end
+
+get '/:tag/' do |tag|
+  puts "#{tag}"
 end
